@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def load_dprof(path):
     data = np.loadtxt(path)
     if data.ndim != 2 or data.shape[1] < 2:
-        raise ValueError(f"{path} must have at least 2 columns: z, rho (optionally rho_std).")
+        raise ValueError(f"Must have columns: z, rho, (maybe rho_std...)")
 
     z = data[:, 0]
     rho = data[:, 1]
@@ -38,10 +38,6 @@ def plot_dprof(path, out_png=None, show=True):
         plt.close()
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python plot_dprof.py path/to/dprof0.073.txt [out.png]")
-        raise SystemExit(2)
-
     path = sys.argv[1]
     out_png = sys.argv[2] if len(sys.argv) >= 3 else None
     plot_dprof(path, out_png=out_png, show=True)
