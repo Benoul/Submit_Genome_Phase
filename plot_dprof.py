@@ -12,7 +12,7 @@ def load_dprof(path):
     rho_std = data[:, 2] if data.shape[1] >= 3 else None
     return z, rho, rho_std
 
-def plot_dprof(path, out_png=None, show=True):
+def plot_dprof(path):
     z, rho, rho_std = load_dprof(path)
 
     plt.figure(figsize=(7, 4.5))
@@ -28,16 +28,8 @@ def plot_dprof(path, out_png=None, show=True):
     plt.grid(alpha=0.25)
     plt.tight_layout()
 
-    if out_png:
-        plt.savefig(out_png, dpi=200)
-        print(f"Saved -> {out_png}")
-
-    if show:
-        plt.show()
-    else:
-        plt.close()
+    plt.show()
 
 if __name__ == "__main__":
     path = sys.argv[1]
-    out_png = sys.argv[2] if len(sys.argv) >= 3 else None
-    plot_dprof(path, out_png=out_png, show=True)
+    plot_dprof(path)
