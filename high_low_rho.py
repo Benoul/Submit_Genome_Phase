@@ -13,10 +13,6 @@ def load_dprof(path):
     return z, rho, rho_std
 
 def low_high_from_quantiles(rho, rho_std=None, frac=0.2, ignore_zeros=True):
-    """
-    frac=0.2 means: use lowest 20% bins for rho_low and highest 20% for rho_high.
-    ignore_zeros=True helps if you have empty padding regions.
-    """
     rho = np.asarray(rho, float)
     if rho_std is not None:
         rho_std = np.asarray(rho_std, float)
@@ -26,9 +22,6 @@ def low_high_from_quantiles(rho, rho_std=None, frac=0.2, ignore_zeros=True):
         mask &= (rho > 0)
 
     vals = rho[mask]
-    if vals.size < 10:
-        raise ValueError("Not enough nonzero bins to estimate low/high densities.")
-
     k = max(1, int(np.floor(frac * vals.size)))
     order = np.argsort(vals)
     vals_sorted = vals[order]
@@ -51,22 +44,12 @@ def low_high_from_quantiles(rho, rho_std=None, frac=0.2, ignore_zeros=True):
     return rho_low, rho_high, err_low, err_high, k, vals.size
 
 def parse_csalt_from_name(fname):
-    """
-    Accepts:
-      dprof0.073.txt
-      dprof_0.073.txt
-      dprof-0.073.txt
-    """
     m = re.search(r"dprof[_-]?([0-9]*\.[0-9]+)", fname)
     if not m:
-        raise ValueError(f"Could not parse csalt from filename: {fname}")
+        raise ValueError(f"failed: {fname}")
     return float(m.group(1))
 
 def parse_linker_from_dir(dirname):
-    """
-    data25 -> 25
-    dat25  -> 25
-    """
     m = re.search(r"(\d+)$", os.path.basename(dirname))
     if not m:
         raise ValueError(f"Could not parse linker length from directory: {dirname}")
