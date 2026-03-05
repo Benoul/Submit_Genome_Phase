@@ -51,8 +51,6 @@ def parse_csalt_from_name(fname):
 
 def parse_linker_from_dir(dirname):
     m = re.search(r"(\d+)$", os.path.basename(dirname))
-    if not m:
-        raise ValueError(f"Could not parse linker length from directory: {dirname}")
     return int(m.group(1))
 
 def collect_rows(data_dirs=("data25", "data30"), frac=0.2, ignore_zeros=True):
@@ -61,7 +59,7 @@ def collect_rows(data_dirs=("data25", "data30"), frac=0.2, ignore_zeros=True):
         L = parse_linker_from_dir(ddir)
         paths = sorted(glob.glob(os.path.join(ddir, "dprof*.txt")))
         if not paths:
-            print(f"[warn] no files found in {ddir}/ matching dprof*.txt")
+            print(f"No matching files found in {ddir}")
             continue
 
         for path in paths:
@@ -92,13 +90,8 @@ def write_csv(rows, out_path="binodal_quantiles.csv"):
         w.writeheader()
         for r in rows:
             w.writerow(r)
-    print(f"Wrote {len(rows)} rows -> {out_path}")
+    print(f"Wrote to {out_path}")
 
 if __name__ == "__main__":
     rows = collect_rows(data_dirs=("data25", "data30"), frac=0.2, ignore_zeros=True)
     write_csv(rows, out_path="binodal_quantiles.csv")
-
-    for r in rows[:10]:
-        el = "" if r["err_low"] is None else f" ± {r['err_low']:.2g}"
-        eh = "" if r["err_high"] is None else f" ± {r['err_high']:.2g}"
-        print(f"L={r['linker']}, csalt={r['csalt']:.3f}: low={r['rho_low']:.6g}{el}, high={r['rho_high']:.6g}{eh}")
