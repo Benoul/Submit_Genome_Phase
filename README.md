@@ -18,7 +18,7 @@ ignore_zeros=True helps if you have empty padding regions, which there are a lot
 # Densities.py
 ################################################
 
-I did not write this code. This was written by Dr Maria Julia Maristany and all credit goes to her for the creation of this code.
+I did not write Densities.py. This was written by Dr Maria Julia Maristany and all credit goes to her for the creation of Densities.py. It is include here because it is not in the other directores listed below.
 
 ################################################
     
