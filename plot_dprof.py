@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 
 def load_dprof(path):
     data = np.loadtxt(path)
-    if data.ndim != 2 or data.shape[1] < 2:
-        raise ValueError(f"Must have columns: z, rho, (maybe rho_std...)")
 
     z = data[:, 0]
     rho = data[:, 1]
