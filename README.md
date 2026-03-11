@@ -21,9 +21,10 @@ ignore_zeros=True helps if you have empty padding regions, which there are a lot
 
 I did not write Densities.py. This was written by Dr Maria Julia Maristany and all credit goes to her for the creation of Densities.py. It is include here because it is not in the other directores listed below.
 
-################################################
 This script creates the dprof_100.txt files, which contain the density profile data for a specifc slab simulation. It calculates it from the cores.dump file that the simulation creates.
-    
+
+################################################
+
 ## Other code used
 All the other code, such as notably the lammps input files come from the following directory:
 https://github.com/CollepardoLab/NucleosomeLinker
