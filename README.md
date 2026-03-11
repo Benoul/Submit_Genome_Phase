@@ -23,3 +23,5 @@ Usage: python...
 
 https://github.com/CollepardoLab/NucleosomeLinker
 https://github.com/CollepardoLab/CollepardoLab_Chromatin_Model/tree/plugin-dev
+
+Because the input files apply to the more general case, you commonly have to change the number of atom types in the data.txt files to 6, even though only three are present in the simultion to ensure that lammps does not crash because it sees a commnd for a particle that does not exist.
