@@ -20,3 +20,6 @@ Usage: python...
     """
 
 
+
+https://github.com/CollepardoLab/NucleosomeLinker
+https://github.com/CollepardoLab/CollepardoLab_Chromatin_Model/tree/plugin-dev
