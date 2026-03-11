@@ -6,7 +6,7 @@ Used to plot the density of the slab along the z-scale (which is stored in a dpr
 
 
 ## high_low_rho.py
-Usage: python...
+Looks for the dprof_100.txt files in the directories 25 and 30 corresponding to the different linker lengths. Note that I renamed the dprof_100.txt files to hve their specific salt concentration, exanple: dprof0.075.txt
 
 
 ## combined_phase_diagram.py
