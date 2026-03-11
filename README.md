@@ -25,3 +25,5 @@ https://github.com/CollepardoLab/NucleosomeLinker
 https://github.com/CollepardoLab/CollepardoLab_Chromatin_Model/tree/plugin-dev
 
 Because the input files apply to the more general case, you commonly have to change the number of atom types in the data.txt files to 6, even though only three are present in the simultion to ensure that lammps does not crash because it sees a commnd for a particle that does not exist.
+
+When bash create_simulation.sh was run, the salts given were 0.073, 0.074, 0.075, 0.076, 0.077, 0.078, 0.079, 0.080, and each was given 120 fibers.
