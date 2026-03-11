@@ -15,7 +15,7 @@ Some things to note:
 frac=0.2: use lowest 20% bins for rho_low and highest 20% for rho_high, gives a good estimate based off of the poorly converged data.
 ignore_zeros=True helps if you have empty padding regions, which there are a lot of in our data because it the simulation did not get to fully converge.
 
-# Densities.py
+# density.py
 ################################################
 
 I did not write Densities.py. This was written by Dr Maria Julia Maristany and all credit goes to her for the creation of Densities.py. It is include here because it is not in the other directores listed below.
