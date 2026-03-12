@@ -45,8 +45,6 @@ def low_high_from_quantiles(rho, rho_std=None, frac=0.2, ignore_zeros=True):
 
 def parse_csalt_from_name(fname):
     m = re.search(r"dprof[_-]?([0-9]*\.[0-9]+)", fname)
-    if not m:
-        raise ValueError(f"failed: {fname}")
     return float(m.group(1))
 
 def parse_linker_from_dir(dirname):
@@ -58,9 +56,6 @@ def collect_rows(data_dirs=("data25", "data30"), frac=0.2, ignore_zeros=True):
     for ddir in data_dirs:
         L = parse_linker_from_dir(ddir)
         paths = sorted(glob.glob(os.path.join(ddir, "dprof*.txt")))
-        if not paths:
-            print(f"No matching files found in {ddir}")
-            continue
 
         for path in paths:
             csalt = parse_csalt_from_name(os.path.basename(path))
