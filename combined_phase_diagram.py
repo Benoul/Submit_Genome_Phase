@@ -46,8 +46,8 @@ def fit_and_plot(ax, filename, label, linker, colour):
 
     crit_legend_label = (
     f"{label}: cc={cc_fit:.5f} M, \n"
-    f"critical point=({rho_c_fit:.1f} g/L, {cc_fit/normalisation:.2f})"
-    )
+    f"critical point=({rho_c_fit:.1f} g/L, {cc_fit/normalisation:.2f})")
+    
     ax.scatter([rho_c_fit], [cc_fit / normalisation], marker='x', s=140, linewidth=2, zorder=10, label = crit_legend_label)
 
 fig, ax = plt.subplots(figsize=(6, 5.5))
