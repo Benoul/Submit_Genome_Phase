@@ -13,7 +13,7 @@ It then extracts the densities of the high density and low density phases and st
 ## combined_phase_diagram.py
 Plots the data from binodal_quantiles.csv and draws the phase diagram lines.
 Some things to note:
-frac=0.2: use lowest 20% bins for rho_low and highest 20% for rho_high, gives a good estimate based off of the poorly converged data.
+frac=0.2: use lowest 20% bins for rho_low and highest 20% for rho_high, this gives a good estimate based off of the frankly poorly converged data.
 ignore_zeros=True helps if you have empty padding regions, which there are a lot of in our data because it the simulation did not get to fully converge.
 
 ## density.py
