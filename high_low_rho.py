@@ -12,6 +12,7 @@ def load_dprof(path):
     rho_std = data[:, 2] if data.shape[1] >= 3 else None
     return z, rho, rho_std
 
+# see the README.md file to learn more about frac and ignore_zeros
 def low_high_from_quantiles(rho, rho_std=None, frac=0.2, ignore_zeros=True):
     rho = np.asarray(rho, float)
     if rho_std is not None:
