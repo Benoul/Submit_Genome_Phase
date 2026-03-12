@@ -29,7 +29,7 @@ This script creates the dprof_100.txt files, which contain the density profile d
 All the other code, such as notably the lammps input files come from the following directory:
 https://github.com/CollepardoLab/NucleosomeLinker
 Some things to note:
-Because the input files apply to the more general case, you commonly have to change the number of atom types in the data.txt files to 6, even though only three are present in the simultion to ensure that lammps does not crash because it sees a commnd for a particle that does not exist.
+Because the input files apply to the more general case, you commonly have to change the number of atom types in the data.txt files to 6, even though only 3 are present in the simultion to ensure that lammps does not crash because it sees a command for a particle that does not exist.
 When bash create_simulation.sh was run, the salts given were 0.073, 0.074, 0.075, 0.076, 0.077, 0.078, 0.079, 0.080, and each was given 120 fibers.
 The exact input text files to create the lammps simulation input data as done when using this directory is given as linker_lengths_*.txt.
 
