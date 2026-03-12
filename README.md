@@ -6,7 +6,7 @@ Used to plot the density of the slab along the z-scale (which is stored in a dpr
 
 
 ## high_low_rho.py
-Looks for the dprof_100.txt files in the directories data25 and data30 corresponding to the different linker lengths. Note that I renamed the dprof_100.txt files to hve their specific salt concentration, exanple: dprof0.075.txt.
+Looks for the dprof_100.txt files in the directories data25 and data30 corresponding to the different linker lengths. Note that I renamed the dprof_100.txt files to have their specific salt concentration, exanple: dprof0.075.txt.
 It then extracts the densities of the high density and low density phases and strores it in binodal_quantiles.csv.
 
 
